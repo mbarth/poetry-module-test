@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "module-build-test"
+version = "0.1.0"
+description = ""
+authors = ["Marcelo Barth <mbarth@encircleapp.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9.12"
+server_shared = { path = "./_shared" }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

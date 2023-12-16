@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "server_shared"
+version = "0.1.0"
+description = ""
+authors = ["Marcelo Barth <mbarth@encircleapp.com>"]
+readme = "README.md"
+
+packages = [{include = "server_shared"}]
+
+[tool.poetry.dependencies]
+python = "^3.9.12"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
