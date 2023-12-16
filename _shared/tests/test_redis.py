@@ -2,6 +2,7 @@ import unittest
 from server_shared import RedisClient  # Assuming your class is in redis_client.py
 
 class TestRedisClient(unittest.TestCase):
+
     def setUp(self):
         self.client = RedisClient()
         self.test_key = "test_key"

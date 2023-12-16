@@ -1,7 +1,5 @@
 import unittest
-
 from server_shared import SharedClass, shared_function
-
 
 class TestDb(unittest.TestCase):
 
@@ -13,3 +11,6 @@ class TestDb(unittest.TestCase):
         # Use the shared_function
         result = shared_function(3, 7)
         print(f"Testing from root; The sum is: {result}")
+
+if __name__ == '__main__':
+    unittest.main()
