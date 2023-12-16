@@ -57,3 +57,23 @@ Hello, [Root App User] greet instance method from DB shared module was called!
 From main; The sum is: 10
 
 ```
+
+## Findings
+
+1. The naming of the shared libraries in the `pyproject.toml` is how the library will be accessed. In this case, the 
+shared library was named `server_shared`.
+2. Sub-modules under the `_shared` folder can be added, but their classes and functions need to be exposed, e.g. the 
+`__init__.py` file at the root of the `_shared` folder exposes them:
+```
+from .db.module1 import SharedClass, shared_function
+
+__all__ = ["SharedClass", "shared_function"]
+```
+3. With these classes and methods exposed, the modules using these modules can now refer to them using their library 
+name, for example, in `main.py`:
+```
+from server_shared import SharedClass, shared_function
+```
+4. Should you make changes in the `_shared` library, you'll need to bump up the version and make sure to reference that
+version in the higher level module making use of the shared library. A proper lifecycle workflow needs to be figured out
+for this.
