@@ -1,0 +1,20 @@
+[flake8:local-plugins]
+extension =
+
+# Note: Without the trailing slash this only works from the checkout root!
+paths = ./
+
+[flake8]
+exclude = .venv
+max-line-length = 128
+ignore =
+    D,
+    E131,E203,E302,E305,E712,E731,
+    W503,
+    # For now, ignore formatting things that black will fix anyway.
+    # If the per-file-ignores list gets too long, flake8 gets really slow.
+    E1,E2,E3,W1,W2,W3,W504,
+noqa-require-code = 1
+enable-extensions = B1
+warn-symbols =
+per-file-ignores =

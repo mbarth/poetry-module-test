@@ -1,0 +1,30 @@
+# Returns the list of Just recipes.
+default:
+    just --list
+
+# Reads the pyproject.toml file from the current project, resolves the dependencies, and installs them.
+install:
+    poetry install --without dev --sync
+
+update:
+    poetry update
+
+# Builds the source and wheels archives.
+build:
+    poetry build
+
+# Run the linters.
+lint:
+    poetry run flake8 .
+    poetry run black server_shared
+
+# List all the available packages.
+show:
+    poetry show --tree
+
+# Run the unit test suite.
+test:
+    poetry run python3 -m unittest
+
+shell:
+    poetry shell
