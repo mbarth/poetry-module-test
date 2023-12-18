@@ -5,7 +5,7 @@ description = ""
 authors = ["Marcelo Barth <mbarth@encircleapp.com>"]
 readme = "README.md"
 
-packages = [{include = "server_shared"}]
+packages = [{include = "server_shared", from="src"}]
 
 [tool.poetry.dependencies]
 python = "^3.9.12"
